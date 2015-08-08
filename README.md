@@ -1,2 +1,0 @@
-# algorithm
-some basic algorithm
