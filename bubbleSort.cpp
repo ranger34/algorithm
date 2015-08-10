@@ -11,11 +11,11 @@ void Print(int data[], int index)
 	cout << endl;
 }
 
-void Swap(int data[], int j)
+void Swap(int &a, int &b)
 {
-	int tmp = data[j];
-	data[j] = data[j + 1];
-	data[j + 1] = tmp;
+	int tmp = a;
+	a = b;
+	b = tmp;
 }
 
 void BubbleSort_1(int data[])		//simplest one
@@ -25,7 +25,7 @@ void BubbleSort_1(int data[])		//simplest one
 		for(int j = 0; j < N - 1 - i; j++)
 		{
 			if(data[j] > data[j + 1])
-				Swap(data, j);
+				Swap(data[j], data[j+1]);
 		}
 		Print(data,i + 1);
 	}
@@ -41,12 +41,12 @@ void BubbleSort_2(int data[])	// find the min one and the max one every time
 	{
 		for(j = low; j < high; ++j)
 			if(data[j] > data[j + 1])
-				Swap(data, j);
+				Swap(data[j], data[j+1]);
 		--high;
 
 		for(j = high; j > low; --j)
 			if(data[j - 1] > data[j])
-				Swap(data, j - 1);
+				Swap(data[j-1], data[j]);
 		++low;
 
 		Print(data, ++i);
@@ -57,8 +57,8 @@ int main()
 {
 	int data[N] = {49, 38, 65, 97, 76, 13, 27, 49};
 	Print(data, 0);
-	//BubbleSort_1(data);
-	BubbleSort_2(data);
+	BubbleSort_1(data);
+	//BubbleSort_2(data);
 
 	return 0;
 }
