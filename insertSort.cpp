@@ -34,6 +34,7 @@ void InsertSort(int data[])
 int main()
 {
 	int data[N] = {49, 38, 65, 97, 76, 13, 27, 49};
+	Print(data, 0);
 	InsertSort(data);
 
 	return 0;
