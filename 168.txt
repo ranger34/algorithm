@@ -32,6 +32,15 @@ public:
             }
             n = (n - tail)/26;
 	    }
+		
+		/*
+		while(n){
+			n -= 1;
+			ch_tmp = 'A' + n % 26;
+			result = ch_tmp + result;
+			n /= 26;
+		}
+		*/
         
 		return result;
     }
