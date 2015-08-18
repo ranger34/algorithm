@@ -1,0 +1,18 @@
+Given two strings s and t, write a function to determine if t is an anagram of s.
+For example,
+s = "anagram", t = "nagaram", return true.
+s = "rat", t = "car", return false.
+Note:
+You may assume the string contains only lowercase alphabets.
+
+class Solution {
+public:
+    bool isAnagram(string s, string t) {
+        unordered_map<char, int> hash_s, hash_t;
+        for(int i = 0; i < s.size(); i++)
+            hash_s[s[i]]++;
+        for(int i = 0; i < t.size(); i++)
+            hash_t[t[i]]++;
+        return hash_s == hash_t;
+    }
+};
