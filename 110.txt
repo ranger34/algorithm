@@ -10,6 +10,7 @@ For this problem, a height-balanced binary tree is defined as a binary tree in w
  *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
  * };
  */
+
 // top to down
 class Solution {
 public:
