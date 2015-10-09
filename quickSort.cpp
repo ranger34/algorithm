@@ -47,6 +47,35 @@ void QuickSort(int data[], int low, int high)	//recursion
 	}
 }
 
+void QuickSort2(int nums[],int low,int high)
+{
+	stack<int> st;
+	int pivot;
+	do{
+		while(low < high)
+		{
+			pivot = partition(nums, low, high);   
+			if((pivot - low) < (high - pivot))
+			{
+				st.push(pivot + 1);
+				st.push(high);
+				high = pivot - 1;
+			}
+			else
+			{
+				st.push(low);
+				st.push(pivot - 1);
+				low = pivot + 1;
+			}   
+		}
+		if(st.empty()) return;
+		high = st.top();
+		st.pop();  
+		low = st.top();
+		st.pop();
+	}while(1);
+}
+
 int main()
 {
 	int data[N] = {49, 38, 65, 97, 76, 13, 27, 49};
