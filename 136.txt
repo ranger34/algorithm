@@ -1,0 +1,14 @@
+//Given an array of integers, every element appears twice except for one. Find that single one.
+
+//Note:
+//Your algorithm should have a linear runtime complexity. Could you implement it without using extra memory? 
+
+// A ^ A = 0, 0 ^ A = 0, A ^ B ^ A = B
+class Solution {
+public:
+    int singleNumber(vector<int>& nums) {
+        for(int i = 1; i < nums.size(); i++)
+            nums[0] = nums[0] ^ nums[i];
+        return nums[0];
+    }
+};
